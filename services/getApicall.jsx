@@ -12,10 +12,12 @@ export const jsonapi=createApi(
 
         keepUnusedDataFor:10,
         refetchOnFocus:true,
-        // end point get/post/update 
+        // end point get/post/update /delete
         endpoints:(builder)=>(
-            {
+            {    //post request
                 Getposts:builder.query({query:()=>"posts"}),
+
+                //delete request
                 CteatePost: builder.mutation({
                     query:(newPost)=>({
                         url:"posts",
@@ -32,4 +34,5 @@ export const jsonapi=createApi(
 
     }
 );
+                    //auto genarate use + endpoint + 
 export const {useGetpostsQuery,useCteatePostMutation}=jsonapi;

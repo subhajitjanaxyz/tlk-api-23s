@@ -6,6 +6,7 @@ export const store=configureStore({
     reducer:{
         [jsonapi.reducerPath]:jsonapi.reducer
     },
+    //auto genarate
     middleware: (getdefaultMiddlware)=>getdefaultMiddlware().concat(jsonapi.middleware)
 });
 setupListeners(store.dispatch)
